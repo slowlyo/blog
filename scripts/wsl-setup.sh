@@ -170,7 +170,8 @@ bash <(curl -sSL https://raw.githubusercontent.com/SuperManito/LinuxMirrors/main
   --backup true \
   --upgrade-software true \
   --clean-cache false \
-  --ignore-backup-tips || error "更换镜像源失败"
+  --ignore-backup-tips \
+  --pure-mode || error "更换镜像源失败"
 
 log "镜像源更换完成"
 
