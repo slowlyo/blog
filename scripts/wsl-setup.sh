@@ -136,7 +136,7 @@ git config --global safe.directory '*'
 # 忽略文件权限
 git config --global core.filemode false
 # github ssh 代理 (~/.ssh/config)
-if [ $(grep -c "github.com" ~/.ssh/config) -eq 0 ]; then
+if [ ! -f ~/.ssh/config ] || ! grep -q "github.com" ~/.ssh/config; then
     cat <<EOF >> ~/.ssh/config
     Host github.com
         Hostname ssh.github.com
