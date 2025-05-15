@@ -1,7 +1,7 @@
 # ======================================================================
 # wsl2 一键初始化脚本 (适用 Ubuntu)
 #
-# 使用方法: sudo bash <(curl -sSL https://raw.githubusercontent.com/slowlyo/blog/master/scripts/wsl-setup.sh)
+# 使用方法: curl -sSL https://raw.githubusercontent.com/slowlyo/blog/master/scripts/wsl-setup.sh | sudo bash
 #
 # wsl 常用命令:
 #    - 安装: wsl --install -d Ubuntu-24.04
