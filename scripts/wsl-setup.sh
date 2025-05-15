@@ -11,6 +11,7 @@
 #    - 退出: exit
 #    - 关闭: wsl --shutdown
 #    - 设置默认发行版: wsl --set-default Ubuntu-24.04
+#    - 设置默认用户: wsl -d Ubuntu-24.04 -u root
 #
 # ======================================================================
 
@@ -199,7 +200,7 @@ log "zsh 安装完成"
 log "开始安装 oh-my-zsh"
 
 # 安装 oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || error "安装 oh-my-zsh 失败"
+RUNZSH=no CHSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || error "安装 oh-my-zsh 失败"
 
 # 安装 oh-my-zsh 插件
 log "安装 oh-my-zsh 插件"
