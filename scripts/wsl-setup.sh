@@ -1,7 +1,7 @@
 # ======================================================================
 # wsl2 一键初始化脚本 (适用 Ubuntu)
 #
-# 使用方法: curl -sSL https://cdn.jsdelivr.net/gh/slowlyo/blog@master/scripts/wsl-setup.sh -o wsl-setup.sh && sudo bash wsl-setup.sh; rm -f wsl-setup.sh
+# 使用方法: curl -sSL https://raw.githubusercontent.com/slowlyo/blog/master/scripts/wsl-setup.sh -o wsl-setup.sh && sudo bash wsl-setup.sh; rm -f wsl-setup.sh
 #
 # wsl 常用命令:
 #    - 安装: wsl --install -d Ubuntu-24.04
@@ -163,7 +163,7 @@ log "开始更换镜像源"
 backup_file "/etc/apt/sources.list"
 
 # 使用中科大镜像源
-bash <(curl -v -sSL https://cdn.jsdelivr.net/gh/SuperManito/LinuxMirrors@main/ChangeMirrors.sh) \
+bash <(curl -v -sSL https://raw.githubusercontent.com/SuperManito/LinuxMirrors/main/ChangeMirrors.sh) \
   --source mirrors.ustc.edu.cn \
   --protocol http \
   --use-intranet-source false \
@@ -177,7 +177,7 @@ log "镜像源更换完成"
 
 # ==== 配置 vimrc ===================================================================================================
 
-# https://cdn.jsdelivr.net/gh/slowlyo/blog@refs/heads/master/conf/.vimrc
+# https://raw.githubusercontent.com/slowlyo/blog/refs/heads/master/conf/.vimrc
 
 log "开始配置 vimrc"
 
@@ -185,7 +185,7 @@ log "开始配置 vimrc"
 backup_file "$HOME/.vimrc"
 
 # 下载新的 vimrc
-curl -sSL https://cdn.jsdelivr.net/gh/slowlyo/blog@refs/heads/master/conf/.vimrc -o ~/.vimrc || error "下载 vimrc 失败"
+curl -sSL https://raw.githubusercontent.com/slowlyo/blog/refs/heads/master/conf/.vimrc -o ~/.vimrc || error "下载 vimrc 失败"
 
 log "vimrc 配置完成"
 
@@ -202,7 +202,7 @@ log "zsh 安装完成"
 log "开始安装 oh-my-zsh"
 
 # 安装 oh-my-zsh
-RUNZSH=no CHSH=no sh -c "$(curl -fsSL https://cdn.jsdelivr.net/gh/ohmyzsh/ohmyzsh@master/tools/install.sh)" || error "安装 oh-my-zsh 失败"
+RUNZSH=no CHSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || error "安装 oh-my-zsh 失败"
 
 # 安装 oh-my-zsh 插件
 log "安装 oh-my-zsh 插件"
