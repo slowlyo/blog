@@ -163,7 +163,7 @@ log "开始更换镜像源"
 backup_file "/etc/apt/sources.list"
 
 # 使用中科大镜像源
-bash <(curl -sSL https://raw.githubusercontent.com/SuperManito/LinuxMirrors/main/ChangeMirrors.sh) \
+bash <(curl -sSL https://cdn.jsdelivr.net/gh/SuperManito/LinuxMirrors@main/ChangeMirrors.sh) \
   --source mirrors.ustc.edu.cn \
   --protocol http \
   --use-intranet-source false \
