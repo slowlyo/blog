@@ -237,5 +237,7 @@ duration=$((end_time - start_time))
 log "脚本执行完成，总耗时: ${duration} 秒"
 
 # 提示用户
-log "请重新打开终端"
+log "请重新打开进入"
+log "1. exit"
+log "2. wsl -d Ubuntu-24.04 -u root"
 log "注意: powerlevel10k 主题配置需要交互，请根据提示完成配置"
