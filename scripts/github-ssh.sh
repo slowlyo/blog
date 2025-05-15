@@ -107,13 +107,26 @@ show_public_key() {
     cat ~/.ssh/id_ed25519.pub
     echo "=========================================="
     log "请将此公钥添加到 GitHub: https://github.com/settings/keys"
+    log "添加步骤:"
+    log "1. 复制上面的公钥内容"
+    log "2. 访问 https://github.com/settings/keys"
+    log "3. 点击 'New SSH key'"
+    log "4. 粘贴公钥内容并保存"
+    echo
+    read -p "完成配置后按回车键继续..."
 }
 
 # 测试 SSH 连接
 test_ssh_connection() {
-    log "测试 SSH 连接..."
-    ssh -T git@github.com || true
-    log "如果看到 'Hi username! You've successfully authenticated...' 则表示配置成功"
+    read -p "是否要测试 SSH 连接？(y/N) " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        log "测试 SSH 连接..."
+        ssh -T git@github.com || true
+        log "如果看到 'Hi username! You've successfully authenticated...' 则表示配置成功"
+    else
+        log "跳过 SSH 连接测试"
+    fi
 }
 
 # 主函数
@@ -131,7 +144,7 @@ main() {
     # 启动 SSH 代理
     start_ssh_agent
     
-    # 显示公钥
+    # 显示公钥并等待用户配置
     show_public_key
     
     # 测试连接
