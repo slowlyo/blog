@@ -236,5 +236,5 @@ duration=$((end_time - start_time))
 log "脚本执行完成，总耗时: ${duration} 秒"
 
 # 提示用户
-log "请重新打开终端或执行 'source ~/.zshrc' 使配置生效"
+log "请重新打开终端"
 log "注意: powerlevel10k 主题配置需要交互，请根据提示完成配置"
