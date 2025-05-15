@@ -9,7 +9,8 @@
 #    - 查看: wsl -l -v
 #    - 进入: wsl -d Ubuntu-24.04
 #    - 退出: exit
-#    - 关闭: wsl --shutdown
+#    - 关闭指定发行版: wsl -t Ubuntu-24.04
+#    - 关闭所有: wsl --shutdown
 #    - 设置默认发行版: wsl --set-default Ubuntu-24.04
 #    - 设置默认用户: wsl -d Ubuntu-24.04 -u root
 #
@@ -237,7 +238,7 @@ duration=$((end_time - start_time))
 log "脚本执行完成，总耗时: ${duration} 秒"
 
 # 提示用户
-log "请重新打开进入"
-log "1. exit"
-log "2. wsl -d Ubuntu-24.04 -u root"
+log "重启 wsl 后生效"
+log "    1. exit"
+log "    2. wsl -t Ubuntu-24.04 ; wsl -d Ubuntu-24.04"
 log "注意: powerlevel10k 主题配置需要交互，请根据提示完成配置"
