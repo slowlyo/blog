@@ -27,16 +27,16 @@ NC='\033[0m'
 
 # 输出日志
 log() {
-    echo -e "${GREEN}$(date '+%Y-%m-%d %H:%M:%S') $1${NC}"
+    echo -e "${GREEN}✅ $1${NC}"
 }
 
 error() {
-    echo -e "${RED}$(date '+%Y-%m-%d %H:%M:%S') ERROR: $1${NC}"
+    echo -e "${RED}❌ ERROR: $1${NC}"
     exit 1
 }
 
 warn() {
-    echo -e "${YELLOW}$(date '+%Y-%m-%d %H:%M:%S') WARNING: $1${NC}"
+    echo -e "${YELLOW}⚠️  WARNING: $1${NC}"
 }
 
 # 检查依赖
