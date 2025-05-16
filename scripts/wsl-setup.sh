@@ -226,7 +226,7 @@ backup_file "$HOME/.zshrc"
 sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc || error "配置 zsh 主题失败"
 
 # 设置 oh-my-zsh 插件
-sed -i 's/plugins=(git)/plugins=(git eza zsh-autosuggestions zsh-syntax-highlighting)/' ~/.zshrc || error "配置 zsh 插件失败"
+sed -i 's/plugins=(git)/plugins=(git z eza zsh-autosuggestions zsh-syntax-highlighting)/' ~/.zshrc || error "配置 zsh 插件失败"
 
 # 设置 zsh 为默认 shell
 chsh -s $(which zsh) || error "设置默认 shell 失败"
