@@ -144,7 +144,7 @@ if [ ! -f ~/.ssh/config ] || ! grep -q "github.com" ~/.ssh/config; then
         Hostname ssh.github.com
         User git
         Port 443
-        ProxyCommand nc -v -x 127.0.0.1:10808 %h %p
+        ProxyCommand nc -v -x 127.0.0.1:7897 %h %p
 EOF
     log "github ssh 代理配置完成"
 else
