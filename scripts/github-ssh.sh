@@ -3,7 +3,7 @@
 # ======================================================================
 # GitHub SSH 密钥一键配置脚本
 #
-# 使用方法: curl -sSL https://raw.githubusercontent.com/slowlyo/blog/master/scripts/github-ssh.sh | bash
+# 使用方法: bash -c "$(curl -sSL https://raw.githubusercontent.com/slowlyo/blog/master/scripts/github-ssh.sh)"
 #
 # 功能:
 #    - 检查并生成 SSH 密钥
