@@ -136,6 +136,8 @@ fi
 git config --global safe.directory '*'
 # 忽略文件权限
 git config --global core.filemode false
+# 记住账号密码
+git config --global credential.helper store
 # github ssh 代理 (~/.ssh/config)
 if [ ! -f ~/.ssh/config ] || ! grep -q "github.com" ~/.ssh/config; then
     cat <<EOF >> ~/.ssh/config
