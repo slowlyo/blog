@@ -220,6 +220,9 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 # 安装 eza
 apt-get install -y eza || error "安装 eza 失败"
 
+# 安装 mise
+curl https://mise.run | sh || error "mise 安装失败"
+
 # 备份 zshrc
 backup_file "$HOME/.zshrc"
 
@@ -227,16 +230,12 @@ backup_file "$HOME/.zshrc"
 sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc || error "配置 zsh 主题失败"
 
 # 设置 oh-my-zsh 插件
-sed -i 's/plugins=(git)/plugins=(git z eza zsh-autosuggestions zsh-syntax-highlighting)/' ~/.zshrc || error "配置 zsh 插件失败"
+sed -i 's/plugins=(git)/plugins=(git z eza mise zsh-autosuggestions zsh-syntax-highlighting)/' ~/.zshrc || error "配置 zsh 插件失败"
 
 # 设置 zsh 为默认 shell
 chsh -s $(which zsh) || error "设置默认 shell 失败"
 
 log "oh-my-zsh 安装完成"
-
-# 安装 mise
-curl https://mise.run | sh || error "mise 安装失败"
-echo 'eval "$(~/.local/bin/mise activate bash)"' >> ~/.bashrc || error "mise 配置写入失败"
 
 # 计算执行时间
 end_time=$(date +%s)
