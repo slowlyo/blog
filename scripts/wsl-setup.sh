@@ -234,6 +234,10 @@ chsh -s $(which zsh) || error "设置默认 shell 失败"
 
 log "oh-my-zsh 安装完成"
 
+# 安装 mise
+curl https://mise.run | sh || error "mise 安装失败"
+echo 'eval "$(/root/.local/bin/mise activate zsh)"' >> "${ZDOTDIR-$HOME}/.zshrc" || error "mise 配置写入失败"
+
 # 计算执行时间
 end_time=$(date +%s)
 duration=$((end_time - start_time))
