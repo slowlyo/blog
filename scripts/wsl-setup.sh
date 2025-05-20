@@ -138,6 +138,9 @@ git config --global safe.directory '*'
 git config --global core.filemode false
 # 记住账号密码
 git config --global credential.helper store
+# 默认使用 merge
+git config --global pull.rebase false
+
 # github ssh 代理 (~/.ssh/config)
 if [ ! -f ~/.ssh/config ] || ! grep -q "github.com" ~/.ssh/config; then
     cat <<EOF >> ~/.ssh/config
