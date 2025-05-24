@@ -131,6 +131,21 @@ main() {
 
     title "Quick Shell"
 
+    # 检测当前 shell
+    if alias qsh > /dev/null 2>&1; then
+        log "别名 qsh 已存在, 后续使用 qsh 即可"
+    else
+        if [ "$SHELL" = "/bin/bash" ]; then
+            echo "alias qsh='bash <(curl -sSL https://raw.githubusercontent.com/slowlyo/blog/master/scripts/quick-shell.sh)'" >> ~/.bashrc
+            log "已添加别名 qsh , 后续使用 qsh 即可"
+        elif [ "$SHELL" = "/bin/zsh" ]; then
+            echo "alias qsh='bash <(curl -sSL https://raw.githubusercontent.com/slowlyo/blog/master/scripts/quick-shell.sh)'" >> ~/.zshrc
+            log "已添加别名 qsh , 后续使用 qsh 即可"
+        else
+            warn "当前 shell 为 $SHELL, 不支持添加别名"
+        fi
+    fi
+
     select script in "${script_list[@]}"; do
         case $REPLY in
             1)
