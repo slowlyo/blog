@@ -3,7 +3,7 @@
 # ========================================================================
 # Quick Shell
 #
-# 使用方法: curl -sSL https://raw.githubusercontent.com/slowlyo/blog/master/scripts/quick-shell.sh | bash
+# 使用方法: bash <(curl -sSL https://raw.githubusercontent.com/slowlyo/blog/master/scripts/quick-shell.sh)
 # ========================================================================
 
 # 设置错误处理
