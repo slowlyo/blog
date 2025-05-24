@@ -137,9 +137,11 @@ main() {
     else
         if [ "$SHELL" = "/bin/bash" ]; then
             echo "alias qsh='bash <(curl -sSL https://raw.githubusercontent.com/slowlyo/blog/master/scripts/quick-shell.sh)'" >> ~/.bashrc
+            source ~/.bashrc
             log "已添加别名 qsh , 后续使用 qsh 即可"
         elif [ "$SHELL" = "/bin/zsh" ]; then
             echo "alias qsh='bash <(curl -sSL https://raw.githubusercontent.com/slowlyo/blog/master/scripts/quick-shell.sh)'" >> ~/.zshrc
+            source ~/.zshrc
             log "已添加别名 qsh , 后续使用 qsh 即可"
         else
             warn "当前 shell 为 $SHELL, 不支持添加别名"
