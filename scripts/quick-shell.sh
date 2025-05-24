@@ -132,7 +132,7 @@ main() {
     title "Quick Shell"
 
     # 检测当前 shell
-    if alias qsh > /dev/null 2>&1; then
+    if alias | grep -q "qsh"; then
         log "别名 qsh 已存在, 后续使用 qsh 即可"
     else
         if [ "$SHELL" = "/bin/bash" ] || [ "$SHELL" = "/usr/bin/bash" ]; then
