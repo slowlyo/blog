@@ -131,9 +131,11 @@ main() {
 
     title "Quick Shell"
 
-    # 检测当前 shell
-    if alias qsh >/dev/null 2>&1; then
+    # 检测别名是否存在
+    if grep -q "alias qsh=" ~/.bashrc || grep -q "alias qsh=" ~/.zshrc; then
+        echo
         log "别名 qsh 已存在, 后续使用 qsh 即可"
+        echo
     else
         if [ "$SHELL" = "/bin/bash" ] || [ "$SHELL" = "/usr/bin/bash" ]; then
             echo
