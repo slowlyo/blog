@@ -136,13 +136,15 @@ main() {
         log "别名 qsh 已存在, 后续使用 qsh 即可"
     else
         if [ "$SHELL" = "/bin/bash" ] || [ "$SHELL" = "/usr/bin/bash" ]; then
+            echo
             echo "可以使用以下命令添加别名"
             echo "echo 'alias qsh='bash <(curl -sSL https://raw.githubusercontent.com/slowlyo/blog/master/scripts/quick-shell.sh)'' >> ~/.bashrc && source ~/.bashrc"
+            echo
         elif [ "$SHELL" = "/bin/zsh" ] || [ "$SHELL" = "/usr/bin/zsh" ]; then
+            echo
             echo "可以使用以下命令添加别名"
             echo "echo 'alias qsh='bash <(curl -sSL https://raw.githubusercontent.com/slowlyo/blog/master/scripts/quick-shell.sh)'' >> ~/.zshrc && source ~/.zshrc"
-        else
-            warn "当前 shell 为 $SHELL, 不支持添加别名"
+            echo
         fi
     fi
 
