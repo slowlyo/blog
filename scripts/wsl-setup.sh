@@ -226,6 +226,8 @@ apt-get install -y eza || error "安装 eza 失败"
 # 安装 mise
 curl https://mise.run | sh || error "mise 安装失败"
 
+echo 'eval "$(~/.local/bin/mise activate zsh)":>> ~/.zshrc
+
 # 备份 zshrc
 backup_file "$HOME/.zshrc"
 
